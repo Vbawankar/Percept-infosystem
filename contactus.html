@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/p logo.png">
+    <title>Percept Infosystem</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-2RW1W2mW67pv4m0Rb4kIH1ptIoHsy3WLdQwAyCtbEjjN5i5T6+SGwnGJGdKM1k8s" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .navbar-custom {
+            background-color: #4CAF50;
+            /* Default background color */
+            padding: 10px 20px;
+        }
+
+        .navbar-custom .navbar-brand img {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .navbar-custom .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-custom .navbar-nav {
+            margin-left: auto;
+            /* Center align the nav links */
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: white;
+            text-decoration: none;
+            /* Remove default underline */
+            position: relative;
+            /* Add relative position */
+        }
+
+        .navbar-custom .navbar-nav .nav-link::before {
+            content: '';
+            /* Add content for the underline */
+            position: absolute;
+            /* Set position to absolute */
+            left: 0;
+            /* Align with the left edge of the link */
+            bottom: -3px;
+            /* Push the underline below the text */
+            width: 100%;
+            /* Full width of the link */
+            height: 2px;
+            /* Thickness of the underline */
+            background-color: transparent;
+            /* Invisible underline by default */
+            transition: background-color 0.3s ease-in-out;
+            /* Smooth transition */
+        }
+
+        .navbar-custom .navbar-nav .nav-link:hover::before {
+            background-color: #FFEB3B;
+            /* Visible underline on hover */
+        }
+
+        .navbar-custom .nav-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Change background color on hover */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .navbar-custom .navbar-nav .nav-item {
+                background-color: #4CAF50;
+                /* Background color for small screens */
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container1 {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Typography */
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        h3.section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-content {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .section-content p {
+            margin: 10px 0;
+        }
+
+        /* Form */
+        form {
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Animation */
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+    </style>
+    
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+      <a class="navbar-brand" href="index.html"><img src="images/p_logo_c-removebg-preview.png" alt="Logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto"> <!-- Changed margin-left to mx-auto for center alignment -->
+              <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="contactus.html">Contact Us</a>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+  </nav>
+
+
+  <div class="container1 animated fadeIn">
+    <h2>Contact Us</h2>
+
+    <div class="section">
+        <h3 class="section-title">Contact Information</h3>
+        <div class="section-content">
+            <p>Address: 20/2, Akar Builders, Opp – Dalal Nursing home, Near Byramji town, Sadar, Nagpur.</p>
+            <p>Website: <a href="http://www.perceptinfosystem.com">www.perceptinfosystem.com</a></p>
+            <p>Email: <a href="mailto:hr@perceptinfosystem.com">hr@perceptinfosystem.com</a></p>
+            <p>Contact Person: Miss. Pooja Bhosle</p>
+            <p>Phone: <a href="tel:+918208970766">8208970766</a> / <a href="tel:+917414977373">7414977373</a></p>
+        </div>
+    </div>
+
+   
+    <div class="section">
+        <h3 class="section-title">Inquiries and Messages</h3>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+<div>
+    <div class="container1 animated fadeIn">
+        <h2>Contact Us</h2>
+    
+        <!-- Contact Information Section -->
+        <div class="section">
+            <h3 class="section-title">Contact Information</h3>
+            <div class="section-content">
+                <!-- Your contact information content goes here -->
+            </div>
+        </div>
+    
+        <!-- Internship and Training Section -->
+        <div class="section">
+            <h3 class="section-title">Treaning and placement</h3>
+            <div class="section-content">
+                <p>Unlock your potential with our placement and training programs. Gain hands-on experience, learn from industry experts, and kickstart your career.</p>
+                <p>Join us to transform your skills and secure exciting opportunities in leading companies.</p>
+                <!-- Add training program details here -->
+                <p>For more information, contact us at <a href="mailto:info@perceptinfosystem.com">info@perceptinfosystem.com</a>.</p>
+                
+                <!-- Payment Form -->
+                <h4>Payment</h4>
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="name">Name on Card:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-element">
+                            Credit or Debit Card
+                        </label>
+                        <div id="card-element">
+                            <!-- A Stripe Element will be inserted here. -->
+                        </div>
+                        <!-- Used to display form errors. -->
+                        <div id="card-errors" role="alert"></div>
+                    </div>
+                    <!-- <button id="payButton" type="button">Pay Now</button> -->
+                    <input type="number" id="amountInput" placeholder="Enter amount">
+                    <button id="payButton" type="button">Pay Now</button>
+                    
+                    <!-- <button type="submit">Pay Now</button> -->
+                </form>
+            </div>
+        </div>
+    
+        <!-- Inquiries and Messages Section -->
+        <div class="section">
+            <h3 class="section-title">Inquiries and Messages</h3>
+            <form id="contact-form">
+                <!-- Your contact form fields go here -->
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="payment getway/index.js"></script>
+
+
+
+
+
+  <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+    <div>
+        <footer class="text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+            <!-- Section: Social media -->
+            <section class="d-flex justify-content-between p-4 text-white" style="background-color: #21D192">
+                <!-- Left -->
+                <div class="me-5">
+                    <span>Get connected with us on social networks:</span>
+                </div>
+                <!-- Left -->
+
+                <!-- Right -->
+                <div>
+                    <a href="https://www.facebook.com/Perceptinfosystemconsultants/" class="text-white me-4" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white me-4">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white me-4">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="https://www.instagram.com/perceptinfosystem/?hl=en" class="text-white me-4" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://in.linkedin.com/company/percept-infosystem-consultants" class="text-white me-4" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-white me-4">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <!-- Right -->
+            </section>
+            <!-- Section: Social media -->
+
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold">Percept Infosystem</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                20/2, Akar Builders, Opp – Dalal Nursing home, Near Byramji town, Sadar, Nagpur.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">Services</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p>
+                                <a href="#!" class="text-dark">Software development</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-dark">Digital Marketing</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-dark">Software Treaning</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-dark">Recruitment Service</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold">Contact</h6>
+                            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+                            <p><i class="fas fa-home mr-3"></i> www.perceptinfosystem.com
+                            </p>
+                            <p><i class="fas fa-envelope mr-3"></i> hr@perceptinfosystem.com </p>
+                            <p><i class="fas fa-phone mr-3"></i> +91 8208970766/</p>
+                            <p><i class="fas fa-print mr-3"></i> +91 7414977373</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+            <!-- Section: Links  -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2024 Copyright:
+                <a class="text-dark" href="https://mdbootstrap.com/">Percept Infosystem</a>
+            </div>
+        </footer>
+    </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
